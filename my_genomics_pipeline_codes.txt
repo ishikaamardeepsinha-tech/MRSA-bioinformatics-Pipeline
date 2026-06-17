@@ -1,0 +1,29 @@
+    1  ishika@LAPTOP-PFTU4N09:~/microbial_genomics/mrsa_project$ prefetch ERR14128727
+    2  cd "C:\Users\ishika\Downloads\ERR14128727.fastq (1)\ERR14128727.fastq (1)"
+    3  C:\Users\ishika\Downloads\ERR14128727.fastq (1)
+    4  C:\Users\ishika\Downloads\ERR14128727.fastq
+    5  cd C:\Users\ishika\Downloads\ERR14128727.fastq
+    6  fastqc "ERR14128727.fastq.gz"
+    7  "cd /mnt/c/Users/ishika/Downloads/ERR14128727.fastq/ERR14128727.fastq
+    8  cd "/mnt/c/Users/ishika/Downloads/ERR14128727.fastq/ERR14128727.fastq"
+    9  cp /mnt/c/Users/ishika/Downloads/ERR14128727.fastq ~/microbial_genomics/mrsa_project/
+   10  wrl
+   11  :/mnt/c/Users/ishika/Downloads/ERR14128727.fastq (1)$
+   12  :/mnt/c/Users/ishika/Downloads/ERR14128727.fastq (1)
+   13  :/mnt/c/Users/ishika/Downloads/ERR14128727.fastq
+   14  :/mnt/c/Users/ishika/Downloads/ERR14128727.fastq (1)$ 'ERR14128727.fastq (1)'
+   15  cd "/mnt/c/Users/ishika/Downloads/ERR14128727.fastq (1)"
+   16  ls
+   17  fastqc
+   18  sudo apt install fastqc
+   19  split -l 400000 "ERR14128727.fastq (1)" mrsa_split_
+   20  split -l 2569112 "ERR14128727.fastq (1)" mrsa_split_
+   21  ls
+   22  cp
+   23  cp ERR14128727.fastq ~/microbial-genomics/mrsa_project/
+   24  cp ERR14128727.fastq(1) ~/microbial-genomics/mrsa_project/
+   25  cp ERR14128727.fastq (1) ~/microbial-genomics/mrsa_project
+   26  fastqc 'ERR14128727.fastq (1)'
+   27  sudo apt install fastqc
+   28  ls
+   29  history > my_genomics_pipeline_codes.txt

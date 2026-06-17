@@ -1,0 +1,133 @@
+ mkdir -p ~/microbial_genomics/mrsa_project && cd ~/microbial_genomics/mrsa_project
+    2  sudo apt update
+    3  sudo apt install -y sra-toolkit
+    4  sudo apt install -y fastqc
+    5  curl -L -o ~/Downloads/MRSA_test.fastq "https://sra-download.ncbi.nlm.nih.gov/traces/sra21/SRR/036925/SRR37811560"
+    6  wget -O SRR39122564.fastq.gz "https://sra-download.ncbi.nlm.nih.gov/traces/sra71/SRR/039122/SRR39122564"
+    7  curl -L -o SRR39122564.fastq.gz "https://sra-download.ncbi.nlm.nih.gov/traces/sra71/SRR/039122/SRR39122564"
+    8  sudo apt install -y sra-toolkit
+    9  prefetch ERR14128727
+   10  fastq-dump --split-files --gzip ERR14128727
+   11  prefetch ERR14128727
+   12  fastq-dump --split-files --gzip ERR14128727
+   13  fastqc ERR14128727_1.fastq.gzz ERR14128727_2.fastq.gz
+   14  sudo apt install fastqc
+   15  mkdir -p ~/microbial_genomics/mrsa_project && cd ~/microbial_genomics/mrsa_project
+   16  cp "/mnt/c/Users/ishika/Downloads/ERR14128727.fastq (1)/ERR14128727.fastq" ~/microbial_genomics/mrsa_project/
+   17  sudo apt install fastqc
+   18  fastqc
+   19  sudo apt install fastqc
+   20  ls
+   21  ERR14128727
+   22  fastqc ERR14128727_1.fastq.gz  ERR14128727_2.fastq.gz
+   23  explorer.exe .
+   24  sudo app install -y trimmomatic
+   25*
+   26  trimmomatic PE ERR14128727_1.fastq.gz  ERR14128727_2.fastq.gz trim_R1.fastq unpaired_R1.fastq  trim_R2.fastq  unpaired_R2.fastq \
+   27  TrimmomaticPE  ERR14128727_1.fastq.gz >  ERR14128727_2.fastq.gz > trim_R1.fastq > unpaired_R1.fastq >  trim_R2.fastq >  unpaired_R2.fastq SLIDINGWINDOW: 4:20 MINLEN:50
+   28  TrimmomaticPE PE ERR14128727_1.fastq.gz ERR14128727_2.fastq.gz trim_R1.fastq unpaired_R1.fastq trim_R2.fastq unpaired_R2.fastq SLIDINGWINDOW: 4:20 MINLEN:50
+   29  TrimmomaticPE PE ERR14128727_1.fastq.gz ERR14128727_2.fastq.gz trim_R1.fastq unpaired_R1.fastq trim_R2.fastq unpaired_R2.fastq SLIDINGWINDOW:4:20 MINLEN:50
+
+ fastp -i ERR14128727_1.fastq.gz -I ERR14128727_2.fastq.gz -o trim_R1.fastq -O trim_R2.fastq
+Read1 before filtering:
+total reads: 1284556
+total bases: 192683400
+Q20 bases: 188366392(97.7595%)
+Q30 bases: 181991247(94.4509%)
+Q40 bases: 0(0%)
+
+Read2 before filtering:
+total reads: 1284556
+total bases: 192683400
+Q20 bases: 188478886(97.8179%)
+Q30 bases: 180751014(93.8073%)
+Q40 bases: 0(0%)
+
+Read1 after filtering:
+total reads: 1273372
+total bases: 191004684
+Q20 bases: 187043857(97.9263%)
+Q30 bases: 180778626(94.6462%)
+Q40 bases: 0(0%)
+
+Read2 after filtering:
+total reads: 1273372
+total bases: 191004684
+Q20 bases: 187382519(98.1036%)
+Q30 bases: 179827648(94.1483%)
+Q40 bases: 0(0%)
+
+Filtering result:
+reads passed filter: 2546744
+reads failed due to low quality: 21934
+reads failed due to too many N: 434
+reads failed due to too short: 0
+reads with adapter trimmed: 36
+bases trimmed due to adapters: 2232
+
+Duplication rate: 0.0593201%
+
+Insert size peak (evaluated by paired-end reads): 39
+
+JSON report: fastp.json
+HTML report: fastp.html
+ishika@LAPTOP-PFTU4N09:~/microbial_genomics/mrsa_project$ ls -lh spades_output
+total 99M
+drwxr-xr-x 4 ishika ishika 4.0K Jun 16 09:07 K21
+drwxr-xr-x 4 ishika ishika 4.0K Jun 16 09:08 K33
+drwxr-xr-x 4 ishika ishika 4.0K Jun 16 09:10 K55
+drwxr-xr-x 4 ishika ishika 4.0K Jun 16 09:11 K77
+-rw-r--r-- 1 ishika ishika  28M Jun 16 09:11 assembly_graph.fastg
+-rw-r--r-- 1 ishika ishika  14M Jun 16 09:11 assembly_graph_after_simplification.gfa
+-rw-r--r-- 1 ishika ishika  15M Jun 16 09:11 assembly_graph_with_scaffolds.gfa
+-rw-r--r-- 1 ishika ishika  14M Jun 16 09:11 before_rr.fasta
+-rw-r--r-- 1 ishika ishika  14M Jun 16 09:11 contigs.fasta
+-rw-r--r-- 1 ishika ishika 1.9M Jun 16 09:11 contigs.paths
+drwxr-xr-x 3 ishika ishika 4.0K Jun 16 09:07 corrected
+-rw-r--r-- 1 ishika ishika   90 Jun 16 08:49 dataset.info
+-rw-r--r-- 1 ishika ishika  230 Jun 16 08:49 input_dataset.yaml
+drwxr-xr-x 2 ishika ishika 4.0K Jun 16 09:11 misc
+-rw-r--r-- 1 ishika ishika 1.5K Jun 16 08:49 params.txt
+drwxr-xr-x 2 ishika ishika 4.0K Jun 16 09:11 pipeline_state
+-rw-r--r-- 1 ishika ishika 3.0K Jun 16 08:49 run_spades.sh
+-rw-r--r-- 1 ishika ishika 4.8K Jun 16 08:49 run_spades.yaml
+-rw-r--r-- 1 ishika ishika  14M Jun 16 09:11 scaffolds.fasta
+-rw-r--r-- 1 ishika ishika 1.9M Jun 16 09:11 scaffolds.paths
+-rw-r--r-- 1 ishika ishika 154K Jun 16 09:11 spades.log
+drwxr-xr-x 2 ishika ishika 4.0K Jun 16 09:11 tmp
+-rw-r--r-- 1 ishika ishika  492 Jun 16 09:11 warnings.log
+ishika@LAPTOP-PFTU4N09:~/microbial_genomics/mrsa_project$
+Assembly                    scaffolds
+# contigs (>= 0 bp)         21590
+# contigs (>= 1000 bp)      2703
+# contigs (>= 5000 bp)      168
+# contigs (>= 10000 bp)     102
+# contigs (>= 25000 bp)     25
+# contigs (>= 50000 bp)     6
+Total length (>= 0 bp)      12993206
+Total length (>= 1000 bp)   6720381
+Total length (>= 5000 bp)   2659695
+Total length (>= 10000 bp)  2193773
+Total length (>= 25000 bp)  964109
+Total length (>= 50000 bp)  362832
+# contigs                   5150
+Largest contig              92870
+Total length                8588032
+GC (%)                      47.17
+N50                         1768
+N90                         798
+auN                         8864.7
+L50                         822
+L90                         3822
+# N's per 100 kbp           2.33
+ishika@LAPTOP-PFTU4N09:~/microbial_genomics/mrsa_project$
+
+Resistance gene Identity        Alignment Length/Gene Length    Coverage        Position in reference   Contig  Position in contig  Phenotype        Accession no.
+ant(9)-Ia       100.00  783/783 100.0   1..783  NODE_135_length_6714_cov_62.011300      2284..3066      Spectinomycin   X02588
+aadD    100.00  762/762 100.0   1..762  NODE_179_length_4636_cov_36.145427      3729..4490      Amikacin, Tobramycin    M19465
+aac(6')-aph(2'')        100.00  1440/1440       100.0   1..1440 NODE_791_length_1802_cov_111.595942     207..1646       Gentamicin, Tobramycin, Netilmicin, Kanamycin, Amikacin, Dibekacin, Isepamicin, Fortimicin, Streptomycin     M13771
+mecA    99.95   2007/2007       100.0   1..2007 NODE_92_length_11447_cov_34.063676      1826..3832      Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam   BX571856
+erm(A)  100.00  732/732 100.0   1..732  NODE_135_length_6714_cov_62.011300      1427..2158      Erythromycin, Lincomycin, Clindamycin, Quinupristin, Pristinamycin IA, Virginiamycin S       X03216
+tet(M)  100.00  1920/1920       100.0   1..1920 NODE_34_length_21107_cov_33.823348      12206..14125    Doxycycline, Tetracycline, Minocycline       AM990992
+bleO    100.00  399/399 100.0   1..399  NODE_179_length_4636_cov_36.145427      3108..3506      Bleomycin       AF051917
+(prokka_env) ishika@LAPTOP-PFTU4N09:~/microbial_genomics/mrsa_project$
